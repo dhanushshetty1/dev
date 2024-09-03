@@ -1,0 +1,35 @@
+    Clean Repository:
+        rm -rf *: Removed all files from the repo.
+        touch dev.py: Created a new dev.py file.
+
+    Initial Git Operations:
+        git add dev.py: Staged dev.py.
+        git status: Checked status showing dev and dev.pub as deleted.
+        git commit -m "first commit": Committed the changes.
+
+    GitHub Setup:
+        ssh -T git@github.com: Verified GitHub SSH authentication.
+        git remote add origin "git@github.com:dhanushshetty1/dev.git": Added remote (error: already exists).
+
+    Handling Branch Issues:
+        git pull origin master: Failed (branch master does not exist on remote).
+        git fetch origin: Fetched branches, found main.
+        git pull origin main: Encountered divergent branches.
+
+    Reconcile Divergent Branches:
+        git config pull.rebase false: Set pull to merge.
+        git pull origin main --allow-unrelated-histories: Merged main into master.
+
+    File Modifications:
+        Added content to dev.py: echo "# Test change" >> dev.py.
+        git add dev.py: Staged the new change.
+        git commit -m "Second commit": Committed the changes.
+        git push origin master: Pushed changes to remote.
+
+    Final Checks:
+        git pull origin master: Ensured everything is up-to-date.
+
+Summary of Current Status
+
+    Local: Your local branch master is clean and up-to-date.
+    Remote: The master branch on GitHub is updated with your latest commits.
